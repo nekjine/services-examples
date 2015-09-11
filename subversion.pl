@@ -66,6 +66,8 @@ my $opt_token = ""; # The token from your SVN services page
 # we need to find out what happened in that revision and then act on it
 #
 
+$ENV{LANG} = "ru_RU.UTF-8";
+
 my $log = `/usr/bin/svnlook log -r $ARGV[1] $ARGV[0]`;
 my $who = `/usr/bin/svnlook author -r $ARGV[1] $ARGV[0]`;
 my $url = ""; # optionally set this to the url of your internal commit browser. Ex: http://svnserver/wsvn/main/?op=revision&rev=$ARGV[1]
